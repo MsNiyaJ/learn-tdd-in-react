@@ -1,6 +1,6 @@
 # A Walkthrough on How to Use Jest and Cypress
 
-Open [https://learntdd.in/react/#setup] to get started
+Open [https://learntdd.in/react/#setup](https://learntdd.in/react/#setup) to get started
 
 ## Available Scripts
 
