@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import NewMessageForm from './NewMessageForm';
+import MessageList from './MessageList';
 
-function App() {
+const App = () => {
+  const [messages, setMessages] = useState([]);
+
+  /**
+   * @desc When onsend is called, add the new message to the messages array.
+   * @param newMessage - A string containing the new message.
+   */
+  const handleSend = (newMessage) => {
+    setMessages([newMessage, ...messages]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NewMessageForm onSend={handleSend} />
+      <MessageList data={messages} />
     </div>
   );
-}
+};
 
 export default App;
